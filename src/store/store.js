@@ -4,92 +4,102 @@ import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
-const initialState = {
-    accommodationWarning: false,
-    userName: '',
-    tripName: '',
-    tripCategory: '',
-    tripWhy: '',
-    showMealsModal: false,
-    showGroundTransportationModal: false,
-    showExportModal: false,
-    cities: [],
-    origin: null,
-    destination: null,
-    departDate: '',
-    returnDate: '',
-    perDiem: {
-        dailyRate: 0,
-    },
-    other: [
-        { item: "", cost: "" }
-    ],
-    noteToApprover: "",
-    acrdResponse: "",
-    estimate: {
-        accommodation: { selected: false, amount: null, type: "Hotel" },
-        mealsAndIncidentals: { selected: false, amount: 0, type: ""},
-        transportation: {
-            selected: false,
-            amount: 0,
+const getDefaultState = () => {
+    return {
+        accommodationWarning: false,
+        userName: '',
+        tripName: '',
+        tripCategory: '',
+        tripWhy: '',
+        showMealsModal: false,
+        showGroundTransportationModal: false,
+        showExportModal: false,
+        cities: [],
+        origin: null,
+        destination: null,
+        departDate: '',
+        returnDate: '',
+        perDiem: {
+            dailyRate: 0,
         },
-        groundTransportation: {
-            selected: false,
-            amount: 0,
-            lineItems: {
-                accommodationToDestinationAmount: 0,
-                accommodationToDestinationType: "",
-                dailyTransportationAmount: 0,
-                dailyTransportationType: "",
-                destinationToAccommodationAmount: 0,
-                destinationToAccommodationType: "",
-                homeToOriginAmount: 0,
-                homeToOriginType: "",
-                originToHomeAmount: 0,
-                originToHomeType: "",
-            }
+        other: [
+            { item: "", cost: "" }
+        ],
+        noteToApprover: "",
+        acrdResponse: "",
+        estimate: {
+            accommodation: { selected: false, amount: null, type: "Hotel" },
+            mealsAndIncidentals: { selected: false, amount: 0, type: ""},
+            transportation: {
+                selected: false,
+                amount: 0,
+            },
+            groundTransportation: {
+                selected: false,
+                amount: 0,
+                lineItems: {
+                    accommodationToDestinationAmount: 0,
+                    accommodationToDestinationType: "",
+                    dailyTransportationAmount: 0,
+                    dailyTransportationType: "",
+                    destinationToAccommodationAmount: 0,
+                    destinationToAccommodationType: "",
+                    homeToOriginAmount: 0,
+                    homeToOriginType: "",
+                    originToHomeAmount: 0,
+                    originToHomeType: "",
+                }
+            },
+            other: { selected: false, amount: 0, description: ""},
         },
-        other: { selected: false, amount: 0, description: ""},
-    },
-    training: false,
-    conference: false,
-    calculatedTotal: "-:--",
-    tripRates: {},
-    mealsAndIncidentals: {
-        YT: {
-            breakfast: 22.75,
-            lunch: 20.90,
-            dinner: 60.25,
-            incidentals: 17.30
+        training: false,
+        conference: false,
+        calculatedTotal: "-:--",
+        tripRates: {},
+        mealsAndIncidentals: {
+            YT: {
+                breakfast: 22.75,
+                lunch: 20.90,
+                dinner: 60.25,
+                incidentals: 17.30
+            },
+            TN: {
+                breakfast: 24.15,
+                lunch: 29.30,
+                dinner: 62.70,
+                incidentals: 17.30
+            },
+            NU: {
+                breakfast: 27.35,
+                lunch: 33.20,
+                dinner: 88.45,
+                incidentals: 17.30
+            },
+            CAN: {
+                breakfast: 20.35,
+                lunch: 20.60,
+                dinner: 50.55,
+                incidentals: 17.30
+            },
         },
-        TN: {
-            breakfast: 24.15,
-            lunch: 29.30,
-            dinner: 62.70,
-            incidentals: 17.30
-        },
-        NU: {
-            breakfast: 27.35,
-            lunch: 33.20,
-            dinner: 88.45,
-            incidentals: 17.30
-        },
-        CAN: {
-            breakfast: 20.35,
-            lunch: 20.60,
-            dinner: 50.55,
-            incidentals: 17.30
-        },
-    },
-    mealsByDay: [],
+        mealsByDay: [],
+      }    
   }
-
+  
+  // initial state
+const state = getDefaultState()
 
 export default new Vuex.Store({
   plugins: [createPersistedState()],
-  state: initialState,
+  state: state,
   mutations: {
-
+    resetState (state) {
+        Object.assign(state, getDefaultState())
+    },
+    resetStateNewTrip (state, newTripObject) {
+        const merged = {...getDefaultState(), ...newTripObject}
+        Object.assign(state, merged)
+    },
     updateAccommodationWarning (state, accommodationWarning) {
         state.accommodationWarning = accommodationWarning
     },
