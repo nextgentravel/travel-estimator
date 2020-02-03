@@ -236,7 +236,6 @@ export default {
     },
     tripInfo: function () {
       let acrdRate = parseInt(this.acrdRate[this.travelMonth].replace(/\$/g, ''));
-      console.log('acrdRate', this.acrdRate)
       var departDate = moment(this.departDate);
       var returnDate = moment(this.returnDate);
       let numberOfDays = returnDate.diff(departDate, 'days')
