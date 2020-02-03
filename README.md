@@ -13,6 +13,8 @@ The Travel Estimator prototype is designed for the following use-case:
 
 * Overnight trips
 
+* Short trips (<30 days)
+
 ## Project setup
 ```
 yarn install
