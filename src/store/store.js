@@ -12,6 +12,7 @@ const getDefaultState = () => {
         tripCategory: '',
         tripWhy: '',
         showMealsModal: false,
+        showDestinationModal: false,
         showGroundTransportationModal: false,
         showExportModal: false,
         cities: [],
@@ -117,6 +118,9 @@ export default new Vuex.Store({
     },
     updateShowExportModal (state, showExportModal) {
         state.showExportModal = showExportModal
+    },
+    updateShowDestinationModal (state, showDestinationModal) {
+        state.showDestinationModal = showDestinationModal
     },
     updateShowMealsModal (state, showMealsModal) {
         state.showMealsModal = showMealsModal

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <DestinationModal v-if="showDestinationModal" />
     <Header />
     <div class="container">
       <br>
@@ -35,7 +36,7 @@
                 :default-value="destination"
                 >
               </autocomplete>
-              <p style="float: right; padding: 5px;"><a href="#">Destination not in list?</a></p>
+              <p style="float: right; padding: 5px;"><a href="#" @click="() => { this.showDestinationModal = true }">Destination not in list?</a></p>
             </div>
           </div>
           <div class="col-sm-4">
@@ -81,11 +82,13 @@
   import moment from 'moment'
   import Header from './Header'
   import Footer from './Footer'
+  import DestinationModal from './DestinationModal'
   export default {
     name: 'TripSelector',
     components: {
       Header,
       Footer,
+      DestinationModal,
     },
     data: function () {
       return {
@@ -201,6 +204,14 @@
       },
     },
     computed: {
+      showDestinationModal: {
+        get() {
+          return this.$store.state.showDestinationModal
+        },
+        set(value) {
+          this.$store.commit('updateShowDestinationModal', value)
+        }
+      },
       training: {
         get() {
           return this.$store.state.training
