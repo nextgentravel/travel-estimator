@@ -45,22 +45,10 @@
                 </div>
               </div>
               <div class="row" style="margin-bottom: 15px; align-items: center;">
-                <div class="col-sm-6">
-                  <div class="form-check">
-                    <input @change="calculate()" v-model="mealsAndIncidentalsSelected" type="checkbox" class="form-check-input" id="mealsAndIncidentalsSelected">
-                    <label class="form-check-label" for="mealsAndIncidentalsSelected">Meals and Incidentals</label>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <a href="#" @click.prevent="toggleMealsModal()" style="float: right;">Select meals to include</a>
-                </div>
-                <div class="col-sm-2"><input @input="mealsAndIncidentalsSelectHandler" v-model="mealsAndIncidentalsAmount" class="form-control" disabled /></div>
-              </div>
-              <div class="row" style="margin-bottom: 15px; align-items: center;">
                 <div class="col-sm-10">
                   <div class="form-check">
                     <input @change="calculate()" v-model="transportationSelected" type="checkbox" class="form-check-input" id="transportationSelected">
-                    <label class="form-check-label" for="transportationSelected">How are you getting from <strong>{{origin}}</strong> to <strong>{{destination}}</strong>? (Flight, Rail)</label>
+                    <label class="form-check-label" for="transportationSelected">Transportation</label>
                   </div>
                 </div>
                 <div class="col-sm-2"><input @input="transportationSelectHandler" v-model="transportationAmount" class="form-control" v-bind:class="{ danger: transportDanger }" /></div>
@@ -74,7 +62,7 @@
                 <div class="col-sm-6">
                   <div class="form-check">
                     <input @change="calculate()" v-model="groundTransportationSelected" type="checkbox" class="form-check-input" id="groundTransportationSelected">
-                    <label class="form-check-label" for="groundTransportationSelected">Ground transportation (Taxi, Bus, Personal Mileage)</label>
+                    <label class="form-check-label" for="groundTransportationSelected">Ground Transportation</label>
                   </div>
                 </div>
                 <div class="col-sm-4"><a class="ml-2" href="#" @click="showGroundTransportationModal = true" style="float: right;">Help me estimate this</a></div>
@@ -84,6 +72,18 @@
                 <div class="col-sm-12">
                   <small class="text-danger">Add an estimated cost, or deselect this item.</small>
                 </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px; align-items: center;">
+                <div class="col-sm-6">
+                  <div class="form-check">
+                    <input @change="calculate()" v-model="mealsAndIncidentalsSelected" type="checkbox" class="form-check-input" id="mealsAndIncidentalsSelected">
+                    <label class="form-check-label" for="mealsAndIncidentalsSelected">Meals and Incidentals</label>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" @click.prevent="toggleMealsModal()" style="float: right;">Select meals to include</a>
+                </div>
+                <div class="col-sm-2"><input @input="mealsAndIncidentalsSelectHandler" v-model="mealsAndIncidentalsAmount" class="form-control" disabled /></div>
               </div>
               <div class="row" style="margin-bottom: 15px; align-items: center;">
                 <div class="col-sm-5">
