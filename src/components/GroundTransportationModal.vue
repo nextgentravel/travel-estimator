@@ -49,7 +49,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-6">
-              Estimated daily ground transportation.
+              Estimated ground transportation in <strong>{{destination.slice(0,-3)}}</strong>.
               <br>
               <!-- <small v-if="dailyTransportationType === 'Taxi'">A taxi may cost <strong>~$12 each way.</strong></small>
               <small v-if="dailyTransportationType === 'Transit'">A transit pass may cost <strong>~$12 per day.</strong></small>
