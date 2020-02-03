@@ -8,6 +8,7 @@
         Loading Domestic Cities
       </div>
       <div v-else>
+                <p><strong>Travelling on Government business within Canada?  Use this tool to quickly estimate the cost of your trip.</strong></p>
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group">
