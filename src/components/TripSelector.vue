@@ -21,6 +21,7 @@
                 :default-value="origin"
               >
               </autocomplete>
+              
             </div>
           </div>
           <div class="col-sm-4">
@@ -34,6 +35,7 @@
                 :default-value="destination"
                 >
               </autocomplete>
+              <p style="float: right; padding: 5px;"><a href="#">Destination not in list?</a></p>
             </div>
           </div>
           <div class="col-sm-4">
