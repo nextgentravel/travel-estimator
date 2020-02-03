@@ -244,15 +244,14 @@ export default {
       return { acrdRate, departDate, returnDate, numberOfDays }
     },
     setAccommodationTotal: function() {
+      
       let tripInfo = this.tripInfo();
       let amount = tripInfo.acrdRate;
       if (this.accommodationType === "Private Accommodations") {
         amount = 50
       }
-      if (this.accommodationAmount === null) {
-        this.accommodationAmount = parseFloat(amount) * tripInfo.numberOfDays;
-      }
-      
+
+      this.accommodationAmount = parseFloat(amount) * tripInfo.numberOfDays;
       this.calculate();
     },
     setGroundTransportationTotal: function() {
