@@ -94,13 +94,16 @@
       }
     },
     mounted() {
-      this.fetchData()
-      this.departDate = this.departDate !== '' ? this.departDate : moment().format('YYYY-MM-DD');
-      this.returnDate = this.returnDate !== '' ? this.returnDate : moment().add(5, 'days').format('YYYY-MM-DD');
-      this.$refs.origin.setValue(this.origin)
-      this.$refs.destination.setValue(this.destination)
+      this.initialize()
     },
     methods: {
+      initialize() {
+        this.fetchData()
+        this.departDate = this.departDate !== '' ? this.departDate : moment().format('YYYY-MM-DD');
+        this.returnDate = this.returnDate !== '' ? this.returnDate : moment().add(5, 'days').format('YYYY-MM-DD');
+        this.$refs.origin.setValue(this.origin)
+        this.$refs.destination.setValue(this.destination)
+      },
       formatDates(dateOne, dateTwo) {
         dateOne = moment(dateOne).format('D MMM')
         dateTwo = moment(dateTwo).format('D MMM')
@@ -113,22 +116,38 @@
       submitTrip: function () {
         let destination = this.currentDestinationValue;
         let origin = this.currentOriginValue;
-        this.$store.commit('updateOrigin', origin)
-        this.$store.commit('updateDestination', destination)
+        let departDate = this.departDate;
+        let returnDate = this.returnDate;
+        this.$store.commit('resetStateNewTrip', {
+          origin,
+          destination,
+          departDate,
+          returnDate,
+        })
         let city = this.cityLookup[destination] || destination;
         let uri = `https://acrd-api.herokuapp.com/${city.replace('/','sss')}/rules`
         fetch(uri)
           .then(response => response.json())
           .then(data => {
-            this.haveResult = true
+            try {
+              window.localStorage.clear();
+            } catch(error) {
+              console.log(error)
+            }
+            
             this.$store.commit('updateAcrdResponse', data)
+            this.$store.commit('updateOrigin', origin)
+            this.$store.commit('updateDestination', destination)
+            this.$store.commit('updateDepartDate', departDate)
+            this.$store.commit('updateReturnDate', returnDate)
+
             this.$router.push({ path: 'calculate' })
           })
         
       },
       clearState: function () {
-        window.localStorage.clear();
-        this.$router.go()  
+        this.$store.commit('resetState')
+        this.initialize()
       },
       fetchData() {
         this.error = this.post = null
