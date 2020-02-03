@@ -25,6 +25,7 @@
                   <option>Core Mandate</option>
                   <option>Stakeholder</option>
                   <option>Training</option>
+                  <option>Other</option>
                 </select>
             </div>
 
