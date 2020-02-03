@@ -6,7 +6,7 @@
       <GroundTransportationModal v-if="showGroundTransportationModal" :setGroundTransportationTotal="this.setGroundTransportationTotal" />
       <ExportModal v-if="showExportModal" />
       <br>
-      <h2>{{origin.slice(0,-3)}} to {{destination.slice(0,-3)}}, {{dateFormat()}}</h2>
+      <h2>{{origin}} to {{destination}}, {{dateFormat()}}</h2>
       <br>
       <div class="row">
         <div class="col-sm-8">
@@ -236,6 +236,7 @@ export default {
     },
     tripInfo: function () {
       let acrdRate = parseInt(this.acrdRate[this.travelMonth].replace(/\$/g, ''));
+      console.log('acrdRate', this.acrdRate)
       var departDate = moment(this.departDate);
       var returnDate = moment(this.returnDate);
       let numberOfDays = returnDate.diff(departDate, 'days')
@@ -244,7 +245,6 @@ export default {
       return { acrdRate, departDate, returnDate, numberOfDays }
     },
     setAccommodationTotal: function() {
-      
       let tripInfo = this.tripInfo();
       let amount = tripInfo.acrdRate;
       if (this.accommodationType === "Private Accommodations") {
