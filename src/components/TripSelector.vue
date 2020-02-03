@@ -126,25 +126,31 @@
           returnDate,
         })
         let city = this.cityLookup[destination] || destination;
-        let uri = `https://acrd-api.herokuapp.com/${city.replace('/','sss')}/rules`
-        fetch(uri)
-          .then(response => response.json())
-          .then(data => {
-            try {
-              window.localStorage.clear();
-            } catch(error) {
-              console.log(error)
-            }
-            
-            this.$store.commit('updateAcrdResponse', data)
+        let cities = Object.keys(this.cityLookup)
+        if (cities.includes(this.currentDestinationValue)) {
+          let uri = `https://acrd-api.herokuapp.com/${city.replace('/','sss')}/rules`
+          fetch(uri)
+            .then(response => response.json())
+            .then(data => {           
+              this.$store.commit('updateAcrdResponse', data)
+              this.$store.commit('updateOrigin', origin)
+              this.$store.commit('updateDestination', destination)
+              this.$store.commit('updateDepartDate', departDate)
+              this.$store.commit('updateReturnDate', returnDate)
+
+              this.$router.push({ path: 'calculate' })
+            })  
+        } else {
+            this.$store.commit('updateAcrdResponse', {"January":"$100","February":"$100","March":"$100","April":"$100","May":"$100","June":"$100","July":"$100","August":"$100","September":"$100","October":"$100","November":"$100","December":"$100"})
             this.$store.commit('updateOrigin', origin)
             this.$store.commit('updateDestination', destination)
             this.$store.commit('updateDepartDate', departDate)
             this.$store.commit('updateReturnDate', returnDate)
 
             this.$router.push({ path: 'calculate' })
-          })
-        
+        }
+
+
       },
       clearState: function () {
         this.$store.commit('resetState')
@@ -174,6 +180,7 @@
         })
       },
       destinationSearch(input) {
+        this.currentDestinationValue = input
         if (input.length < 1) {
           return []
         }
