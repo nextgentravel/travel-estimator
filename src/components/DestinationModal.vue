@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body" style="margin-top: 10px;">
             <p>Only destinations that are listed in the Government of Canada Accommodation and Car Rental Directory show up in this list.</p>
-            <p>Continue with your estimate by typing in the name of your destination.  Your maximum night rate for acommodations will be $100.</p>
+            <p>Continue with your estimate by typing in the name of your destination.  Your maximum night rate for accommodations will be $100.</p>
         </div>
         <div class="modal-footer">
           <div>
