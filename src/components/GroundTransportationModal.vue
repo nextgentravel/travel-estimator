@@ -11,7 +11,7 @@
         <div class="modal-body" style="margin-top: 10px;">
           <div class="row mb-3">
             <div class="col-sm-6">
-              <strong>Home</strong> to <strong>{{origin.slice(0,-3)}}</strong> port or station.
+              <strong>Home</strong> to <strong>{{origin}}</strong> port or station.
               <br>
               <!-- <small v-if="homeToOriginType === 'Taxi'">A taxi may cost <strong>~$25.</strong></small>
               <small v-if="homeToOriginType === 'Transit'">A transit pass may cost <strong>~$9.</strong></small>
@@ -30,7 +30,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-6">
-              <strong>{{destination.slice(0,-3)}}</strong> port or station to <strong>accommodation.</strong>
+              <strong>{{destination}}</strong> port or station to <strong>accommodation.</strong>
               <br>
               <!-- <small v-if="destinationToAccommodationType === 'Taxi'">A taxi may cost <strong>~$55.</strong></small>
               <small v-if="destinationToAccommodationType === 'Transit'">A transit pass may cost <strong>~$12 per day.</strong></small>
@@ -49,7 +49,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-6">
-              Estimated daily ground transportation.
+              Estimated ground transportation in <strong>{{destination}}</strong>.
               <br>
               <!-- <small v-if="dailyTransportationType === 'Taxi'">A taxi may cost <strong>~$12 each way.</strong></small>
               <small v-if="dailyTransportationType === 'Transit'">A transit pass may cost <strong>~$12 per day.</strong></small>
@@ -68,7 +68,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-6">
-              <strong>{{destination.slice(0,-3)}}</strong> <strong>accommodation</strong> to port or station.
+              <strong>{{destination}}</strong> <strong>accommodation</strong> to port or station.
               <br>
               <!-- <small v-if="accommodationToDestinationType === 'Taxi'">A taxi may cost <strong>~$55.</strong></small>
               <small v-if="accommodationToDestinationType === 'Transit'">A transit pass may cost <strong>~$12 per day.</strong></small>
@@ -87,7 +87,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-6">
-              <strong>{{origin.slice(0,-3)}}</strong> port or station to <strong>home</strong>.
+              <strong>{{origin}}</strong> port or station to <strong>home</strong>.
               <br>
               <!-- <small v-if="originToHomeType === 'Transit'">A transit pass may cost <strong>~$9.</strong></small>
               <small v-if="originToHomeType === 'Taxi'">A taxi may cost <strong>~$25.</strong></small>

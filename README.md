@@ -1,5 +1,20 @@
 # travel-estimator
 
+## Prototype purpose
+
+The Travel Estimator prototype is designed for the following use-case:
+
+* Domestic travel within Canada
+
+* Relatively straightforward business travel:
+	* travelling from one city to another
+	* travelling by flight/rail/bus
+	* staying in a hotel/other accommodation
+
+* Overnight trips
+
+* Short trips (<30 days)
+
 ## Project setup
 ```
 yarn install
