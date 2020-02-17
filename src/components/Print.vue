@@ -8,7 +8,7 @@
         <h4>{{store.tripName}}</h4>
         <div>
             <strong>Details: </strong>
-            {{store.origin.slice(0,-3)}} to {{store.destination.slice(0,-3)}}, {{dateFormat()}}
+            {{store.origin}} to {{store.destination}}, {{dateFormat()}}
         </div>
         <div>
             <strong>Trip Purpose: </strong>

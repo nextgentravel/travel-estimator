@@ -6,9 +6,9 @@
         <header class="shadow-sm">
             <div class="" style="background-color: #FAF2CC; text-align: center;">
                 <div class="container py-2">
-                    <!-- <button
-                        style="background: #FEC04F; border: 1px solid #000000; border-radius: 20px;"><strong>ALPHA</strong></button> -->
-                    <span>&nbsp;&nbsp;This is a concept prototype that was developed in 2019.  <strong>It is no longer being developed, and data provided may not be accurate.</strong>  Please refer to the <a href='https://rehelv-acrd.tpsgc-pwgsc.gc.ca/acrds/' target='_blank'>Accommodation and Car Rental Directory</a> for current rates.</span>
+                    <button
+                        style="background: #FEC04F; border: 1px solid #000000; border-radius: 20px;"><strong>ALPHA</strong></button>
+                    <span>&nbsp;&nbsp;This is a prototype. This site will change as we test ideas.</span>
                 </div>
             </div>
             <div>
