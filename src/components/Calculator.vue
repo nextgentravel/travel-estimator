@@ -364,7 +364,8 @@ export default {
       return this.$store.state.estimate.groundTransportation
     },
     travelMonth () {
-      return moment(this.$store.state.departDate).subtract(1, "month").startOf("month").format('MMMM')
+      let travelMonth = moment(this.$store.state.departDate).startOf("month").format('MMMM');
+      return travelMonth;
     },
     acrdRate () {
       return this.$store.state.acrdResponse
