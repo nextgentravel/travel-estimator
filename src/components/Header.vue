@@ -16,22 +16,22 @@
                         style="background: #FEC04F; border: 1px solid #000000; border-radius: 20px; margin-right: 10px;"><strong>ARCHIVED</strong></button>
                     <span>This prototype is no longer under development.</span>
 
-                    <p v-show="showBannerInfo">
+                    <div v-show="showBannerInfo">
                         <br>
-                        This prototype is no longer being maintained as of
+                        <p style="margin-bottom: .2em;">This prototype is no longer being maintained as of
                             March 27, 2020. The information provided may no longer be accurate. Please
                             consult the <a target="_blank"
                                 href="https://rehelv-acrd.tpsgc-pwgsc.gc.ca/acrds/index-eng.aspx">Accommodation
                                 and Car Rental Directory</a> and the
                             <a target="_blank" href="https://www.njc-cnm.gc.ca/directive/d10/en">National Joint Council Travel
-                                Directive</a> for the most up-to-date information.
-                            For more information on the NextGen Travel program, please visit
+                                Directive</a> for the most up-to-date information.</p>
+                            <p style="margin-bottom: .2em;">For more information on the NextGen Travel program, please visit
                             <a target="_blank"
-                                href="http://gcintranet.tpsgc-pwgsc.gc.ca/gc/svp-sts/postes-roles-eng.html">http://gcintranet.tpsgc-pwgsc.gc.ca/gc/svp-sts/postes-roles-eng.html</a>.
-                            If you are interested in contributing to this project, the source code is
+                                href="http://gcintranet.tpsgc-pwgsc.gc.ca/gc/svp-sts/postes-roles-eng.html">http://gcintranet.tpsgc-pwgsc.gc.ca/gc/svp-sts/postes-roles-eng.html</a>.</p>
+                            <p style="margin-bottom: .2em;">If you are interested in contributing to this project, the source code is
                             available on Github: <a target="_blank"
-                                href="https://github.com/nextgentravel/travel-estimator">https://github.com/nextgentravel/travel-estimator</a>
-                    </p>
+                                href="https://github.com/nextgentravel/travel-estimator">https://github.com/nextgentravel/travel-estimator</a></p>
+                    </div>
                 </div>
             </div>
             <div style="background-color: #137991; border-bottom: 10px solid #002D42;">
