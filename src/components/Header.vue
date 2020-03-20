@@ -8,7 +8,7 @@
                 <div class="container py-3">
                     <div style="width: 2em ;display: inline-block; padding-right: .5em; vertical-align: middle;">
                         <font-awesome-icon @click="toggleBannerInfo"
-                            v-bind:icon="showBannerInfo ? 'chevron-right' : 'chevron-down'"
+                            v-bind:icon="showBannerInfo ? 'chevron-down' : 'chevron-right'"
                             style="font-size: 1.5em; color: black;" />
                     </div>
 
