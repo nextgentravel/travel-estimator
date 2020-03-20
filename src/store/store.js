@@ -14,6 +14,7 @@ const getDefaultState = () => {
         showMealsModal: false,
         showDestinationModal: false,
         showGroundTransportationModal: false,
+        showBannerInfo: true,
         showExportModal: false,
         cities: [],
         origin: null,
@@ -241,6 +242,9 @@ export default new Vuex.Store({
     },
     updateOriginToHomeAmount (state, originToHomeAmount) {
         state.estimate.groundTransportation.lineItems.originToHomeAmount = originToHomeAmount
+    },
+    updateShowBannerInfo (state) {
+        state.showBannerInfo = !state.showBannerInfo
     },
   },
   

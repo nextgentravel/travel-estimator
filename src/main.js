@@ -17,12 +17,12 @@ import Print from './components/Print.vue'
 import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
 import 'vue-airbnb-style-datepicker/dist/vue-airbnb-style-datepicker.min.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faExclamationCircle, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faExclamationCircle, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faExclamationCircle)
 library.add(faChevronDown)
-library.add(faChevronUp)
+library.add(faChevronRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
